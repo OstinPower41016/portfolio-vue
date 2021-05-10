@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <main-view></main-view>
+  <nav-bar class="sticky"></nav-bar>
+  <what-i-do></what-i-do>
+  <my-works />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<script>
+import MainView from '@/components/Home/MainView.vue';
+import NavBar from '@/components/NavBar.vue';
+import WhatIDo from '@/components/Home/WhatIDo.vue';
+import MyWorks from '@/components/Home/MyWorks.vue';
 
-export default defineComponent({
-  name: 'Home',
+export default {
   components: {
-    HelloWorld,
+    MainView,
+    NavBar,
+    WhatIDo,
+    MyWorks,
   },
-});
+};
 </script>
+
+<style lang="scss" scoped>
+.sticky {
+  position: sticky;
+  top: 0;
+}
+</style>
